@@ -1,0 +1,7 @@
+# Identity only: never spoof the CPU architecture, SDK, boot hardware or drivers.
+ro.product.brand=google
+ro.product.manufacturer=Google
+ro.product.model=Pixel
+ro.product.name=sailfish
+ro.product.device=sailfish
+ro.build.product=sailfish

@@ -1,0 +1,26 @@
+on post-fs-data
+    start logd
+    exec u:r:su:s0 root root -- /magisk/busybox sh -o standalone /magisk/bootstrap.sh
+    exec u:r:magisk:s0 root root -- /sbin/magisk --post-fs-data
+
+on nonencrypted
+    exec u:r:magisk:s0 root root -- /sbin/magisk --service
+
+on property:vold.decrypt=trigger_restart_framework
+    exec u:r:magisk:s0 root root -- /sbin/magisk --service
+
+on property:sys.boot_completed=1
+    exec u:r:magisk:s0 root root -- /sbin/magisk --boot-complete
+    start pixeliso_status
+
+on property:init.svc.zygote=restarting
+    exec u:r:magisk:s0 root root -- /sbin/magisk --zygote-restart
+
+on property:init.svc.zygote=stopped
+    exec u:r:magisk:s0 root root -- /sbin/magisk --zygote-restart
+
+service pixeliso_status /magisk/busybox sh -o standalone /magisk/status.sh
+    user root
+    seclabel u:r:magisk:s0
+    disabled
+    oneshot

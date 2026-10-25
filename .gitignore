@@ -1,0 +1,85 @@
+# Local build workspace, downloaded assets and upstream reference checkouts
+/build/
+/dist/
+/out/
+/downloads/
+/upstream/
+
+# Generated release metadata (publish alongside ISOs as release assets)
+/BUILD-MANIFEST*.json
+*.iso.sha256
+*.img.sha256
+*.sfs.sha256
+
+# Android images and compiled packages
+*.iso
+*.img
+*.sfs
+*.squashfs
+*.apk
+*.apks
+*.xapk
+*.aab
+*.dex
+*.odex
+*.vdex
+*.oat
+*.art
+
+# Virtual machine disks, snapshots and local machine configuration
+*.vdi
+*.vmdk
+*.qcow
+*.qcow2
+*.vhd
+*.vhdx
+*.hdd
+*.sav
+*.vmem
+*.vmsn
+*.vmss
+*.nvram
+*.vbox
+*.vbox-prev
+*.vmx
+*.vmxf
+*.lck/
+
+# Python caches and local virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+env/
+
+# Logs, crash dumps and temporary files
+*.log
+*.pid
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+core
+core.[0-9]*
+
+# Local secrets and machine-specific editor/OS files
+.env
+.env.*
+!.env.example
+!.env.*.example
+.idea/
+.vscode/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Keep source, module definitions, documentation and docs/images/ in Git.

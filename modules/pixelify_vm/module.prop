@@ -1,0 +1,6 @@
+id=pixelify_vm
+name=Pixelify-VM - First Generation Pixel Identity
+version=1.0
+versionCode=1
+author=Pixel ISO local build
+description=Custom x86-compatible Pixel (sailfish) identity profile. Not the Kingsman44 Pixelify module. Preserves VM hardware, real CPU ABI and Android API level.
