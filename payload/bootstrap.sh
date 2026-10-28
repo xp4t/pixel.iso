@@ -19,6 +19,10 @@ mkdir -p /sbin/.magisk/mirror /sbin/.magisk/block
 touch /sbin/.magisk/config
 
 mkdir -p /data/adb/magisk /data/adb/modules /data/adb/service.d /data/adb/post-fs-data.d
+cp /magisk/setup-permissions.sh /data/adb/service.d/pixeliso-setup-permissions.sh
+chmod 0755 /data/adb/service.d/pixeliso-setup-permissions.sh
+cp /magisk/playstore-recovery.sh /data/adb/service.d/pixeliso-playstore-recovery.sh
+chmod 0755 /data/adb/service.d/pixeliso-playstore-recovery.sh
 cp /sbin/magisk32 /sbin/magisk64 /sbin/magiskinit /sbin/magiskpolicy /sbin/busybox /data/adb/magisk/
 cp /magisk/magiskboot /data/adb/magisk/
 cp -a /magisk/assets/. /data/adb/magisk/

@@ -96,6 +96,11 @@ ISO files are build outputs and are not committed to this source repository.
 Use an ISO supplied separately, or follow the build instructions in the technical
 guides to create one from the required upstream assets.
 
+To build the Full edition on Debian/Ubuntu, run `./build_iso.sh --install-deps`.
+The script downloads and verifies the pinned inputs and includes the app repairs.
+See [build, download and installation instructions](BUILDING.md) for Docker,
+offline builds and automatic VirtualBox settings.
+
 ### 2. Create a virtual machine
 
 1. Open VirtualBox and select **New**. Name the VM `pixel.iso`.
@@ -232,6 +237,7 @@ matter. Component versions and hashes are in the build manifests below.
 
 ## Technical documentation
 
+- [Build script, download links and installation steps](BUILDING.md)
 - [Photos Lite guide and Docker rebuild steps](LITE-README.md)
 - [Full edition setup, integration and rebuild steps](FULL-README.md)
 - [Lite test results](LITE-TEST-RESULTS.md) · [Full test results](TEST-RESULTS.md)

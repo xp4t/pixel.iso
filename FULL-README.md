@@ -96,6 +96,18 @@ Network evidence and regression checks are recorded in `build/network/` and
 
 ## Build and provenance
 
+The startup helpers grant Data Transfer Tool's required `WRITE_SECURE_SETTINGS`
+permission if setup downloads it within the first 15 minutes after boot. They
+also watch for the bundled Play Store's observed `GridClusterPaddingView`
+search-results crash and clear only its cache before reopening it, once per boot.
+This is a recovery workaround for the old Store client, not a client update.
+Accounts, app preferences and installed applications are preserved. Diagnostic
+logs are saved under `/data/adb/pixeliso-setup-permissions.log` and
+`/data/adb/pixeliso-playstore-recovery.log`.
+
+The x86-64 CPU requirement must still be enabled in the VM configuration; an ISO
+cannot enable VirtualBox's long mode for the host.
+
 `BUILD-MANIFEST.json` records component versions, upstream links and SHA-256 hashes.
 The base ISO is additionally checked against Android-x86's published SHA-1:
 `1cc85b5ed7c830ff71aecf8405c7281a9c995aa0`.
@@ -105,6 +117,9 @@ The ISO also includes these payload sources under `/pixeliso-source`.
 The base ISO's bootable BIOS/EFI structure is preserved with xorriso's boot replay.
 
 With the pinned assets in `downloads/`, rebuild using Python 3, cpio and xorriso:
+
+For automated downloads, dependency setup and optional VM configuration, use
+[`build_iso.sh`](build_iso.sh) as described in [BUILDING.md](BUILDING.md).
 
 ```sh
 python3 build_iso.py

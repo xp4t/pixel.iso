@@ -224,6 +224,11 @@ manifest = {
                 'scope': 'Fresh data with the Android-x86 virt_wifi driver; existing Wi-Fi stores are preserved.',
                 'profile_sha256': digest(ROOT / 'payload/virtwifi-config.xml'),
                 'helper_sha256': digest(ROOT / 'payload/connect-virtwifi.sh')},
+    'app_recovery': {
+        'setup_permissions_sha256': digest(ROOT / 'payload/setup-permissions.sh'),
+        'playstore_recovery_sha256': digest(ROOT / 'payload/playstore-recovery.sh'),
+        'playstore_scope': 'Cache-only recovery for GridClusterPaddingView ClassCastException, once per boot',
+    },
 }
 if LITE:
     manifest['variant'] = 'Photos Lite x86_64'
